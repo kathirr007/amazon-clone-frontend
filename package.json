@@ -1,0 +1,39 @@
+{
+  "name": "amazon-clone-full",
+  "version": "1.0.0",
+  "description": "Amazon clone project using Vue.js, Nuxt.js, MongoDb, Stripe, Algolia, and AWS",
+  "author": "kathirr007",
+  "private": true,
+  "toDebug": "Add --inspect=7000 --inspect-brk before javascript file to debug node server functions",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server/server.js --watch server",
+    "build": "nuxt build",
+    "analyze": "nuxt build -a",
+    "start": "cross-env NODE_ENV=production node server/server.js",
+    "generate": "nuxt generate",
+    "test": "nuxt",
+    "vercel-build-old": "yarn global add node-gyp node-pre-gyp node-gyp-build"
+  },
+  "dependencies": {
+    "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/axios": "^5.12.0",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/proxy": "^2.1.0",
+    "@nuxtjs/pwa": "^3.2.2",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.3",
+    "bootstrap-vue": "^2.19.0",
+    "date-fns": "^2.16.1",
+    "nuxt": "^2.14.12",
+    "stripe": "^8.50.0",
+    "vue-carousel": "^0.18.0"
+  },
+  "devDependencies": {
+    "node-fetch-native": "^1.4.0",
+    "sass": "^1.69.0",
+    "sass-loader": "10.1.1",
+    "vue-star-rating": "^1.7.0",
+    "vuex-persistedstate": "^4.0.0-beta.1"
+  },
+  "resolutions": {}
+}
