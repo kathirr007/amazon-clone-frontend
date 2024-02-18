@@ -31,7 +31,7 @@
                             <b-col>
                               <nuxt-link :to="`/products/${product.objectID}`" class="a-link-normal">
                                 <h2 class="a-size-medium">
-                                  {{product.title}}
+                                  {{ product.title }}
                                   <span class="a-letter-space"></span>
                                   <span class="a-letter-space"></span>
                                   <span class="a-size-small a-color-secondary">Sep 3, 2020</span>
@@ -44,7 +44,8 @@
                             <b-col>
                               <span class="a-size-small a-color-secondary">by</span>
                               <span class="a-size-small a-color-secondary">
-                                <a href="#" class="a-link-normal a-text-normal">{{ product.owner ? product.owner.name: 'N/A' }}</a>
+                                <a href="#" class="a-link-normal a-text-normal">{{ product.owner ? product.owner.name :
+                                  'N/A' }}</a>
                               </span>
                             </b-col>
                           </b-row>
@@ -105,8 +106,7 @@
                                     :rounded-corners="true"
                                     :read-only="true"
                                     :star-size="18"
-                                    :star-points="[23,2,14,17,0,19,10,34,7,50,23,43,38,50,36,34,46,19,31,17]"
-                                  >
+                                    :star-points="[23, 2, 14, 17, 0, 19, 10, 34, 7, 50, 23, 43, 38, 50, 36, 34, 46, 19, 31, 17]">
                                   </star-rating>
                                 </client-only>
                               </div>
@@ -128,7 +128,8 @@
                           <h3>
                             Sorry <strong><i class="far fa-frown h3"></i></strong>
                           </h3>
-                          No Results found for the search term <strong class="text-warning h5">{{$route.query.title}}</strong> <br>
+                          No Results found for the search term <strong
+                            class="text-warning h5">{{ $route.query.title }}</strong> <br>
                           Please try with other search terms.
                         </b-col>
                       </div>
@@ -147,6 +148,8 @@
 <script>
 // import FeaturedProduct from '~/components/FeaturedProduct'
 import StarRating from 'vue-star-rating'
+
+const apiUrl = process.env.BASE_URL || 'http://localhost:3010'
 
 export default {
   transition(to, from) {
@@ -170,16 +173,16 @@ export default {
     StarRating
   },
   watchQuery: ['title'],
-  async asyncData({$axios, query}) {
+  async asyncData({ $axios, query }) {
     try {
-      let products = await $axios.$post('/api/search', { title: query.title })
+      let products = await $axios.$post(`${apiUrl}/search`, { title: query.title })
 
       // console.log(products)
 
       return {
         products
       }
-    } catch(err) {
+    } catch (err) {
       console.log(err)
     }
   },
@@ -197,5 +200,4 @@ export default {
   }
 }
 </style>
-<style lang="scss">
-</style>
+<style lang="scss"></style>
