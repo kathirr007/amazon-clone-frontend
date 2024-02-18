@@ -6,12 +6,11 @@
   "private": true,
   "toDebug": "Add --inspect=7000 --inspect-brk before javascript file to debug node server functions",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon server/server.js --watch server",
+    "dev": "nuxt",
     "build": "nuxt build",
-    "analyze": "nuxt build -a",
-    "start-old": "cross-env NODE_ENV=production node server/server.js",
+    "start": "nuxt start",
     "generate": "nuxt generate",
-    "start": "nuxt",
+    "analyze": "nuxt build -a",
     "vercel-build-old": "yarn global add node-gyp node-pre-gyp node-gyp-build"
   },
   "dependencies": {
