@@ -23,12 +23,12 @@
     "bootstrap": "^4.5.3",
     "bootstrap-vue": "^2.19.0",
     "date-fns": "^2.16.1",
+    "node-fetch-native": "^1.6.2",
     "nuxt": "^2.14.12",
     "stripe": "^8.50.0",
     "vue-carousel": "^0.18.0"
   },
   "devDependencies": {
-    "node-fetch-native": "^1.4.0",
     "sass": "^1.69.0",
     "sass-loader": "10.1.1",
     "vue-star-rating": "^1.7.0",
