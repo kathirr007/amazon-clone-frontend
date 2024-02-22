@@ -145,11 +145,11 @@ export default {
             })
             .then((_) => {
               // debugger;
-              let userName = this.$store.$auth.$state.user.name;
+              let userName = this.$store.state.auth?.user?.name;
               this.$root.$bvToast.toast(`Welcome back ${userName}`, {
                 title: `Successfull Login`,
                 variant: "success",
-                autoHideDelay: 2000,
+                autoHideDelay: 5000,
                 solid: true,
               });
               this.$router.push("/");

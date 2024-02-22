@@ -25,8 +25,8 @@
                 v-model="name"
                 type="text"
                 :placeholder="authUser !== null
-                    ? authUser?.name
-                    : 'Please enter new name here'
+                  ? authUser?.name
+                  : 'Please enter new name here'
                   "></b-form-input>
             </b-form-group>
             <!-- Email -->
@@ -39,8 +39,8 @@
                 v-model="email"
                 type="email"
                 :placeholder="authUser !== null
-                    ? authUser?.email
-                    : 'Please enter new email here'
+                  ? authUser?.email
+                  : 'Please enter new email here'
                   "></b-form-input>
             </b-form-group>
             <!-- Password -->
@@ -118,6 +118,12 @@ export default {
         // debugger
         if (response.success) {
           // debugger
+          this.$root.$bvToast.toast(`Profile updated successfully.`, {
+            title: `Profile Update`,
+            variant: "success",
+            autoHideDelay: 2000,
+            solid: true,
+          });
           this.name = "";
           this.email = "";
           this.password = "";
@@ -131,7 +137,12 @@ export default {
     async onLogout() {
       try {
         await this.$auth.logout().then((_) => {
-          console.log("logged out successfully...");
+          this.$root.$bvToast.toast(`Come back again.`, {
+            title: `Successfull Logout`,
+            variant: "success",
+            autoHideDelay: 2000,
+            solid: true,
+          });
           this.$router.push("/");
         });
       } catch (error) {
