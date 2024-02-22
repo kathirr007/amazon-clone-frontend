@@ -72,7 +72,7 @@
 </template>
 
 <script>
-const apiUrl = process.env.NODE_ENV === 'production' ? `${process.env.BASE_URL}/api` : 'http://localhost:3010'
+const apiUrl = process.env.NODE_ENV === 'production' ? `${process.env.BASE_URL}` : 'http://localhost:3010'
 
 export default {
   layout: "admin",
