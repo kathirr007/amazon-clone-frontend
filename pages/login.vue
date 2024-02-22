@@ -72,7 +72,7 @@
 </template>
 
 <script>
-const apiUrl = process.env.BASE_URL || 'http://localhost:3010'
+const apiUrl = process.env.NODE_ENV === 'production' ? `${process.env.BASE_URL}/api` : 'http://localhost:3010'
 
 export default {
   layout: "admin",
@@ -128,6 +128,7 @@ export default {
       } catch (err) { }
     },
     async onLogin() {
+      console.log(process.env)
       let data = {
         email: this.email,
         password: this.password,
