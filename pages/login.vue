@@ -106,7 +106,7 @@ export default {
           password: this.password,
         };
         // debugger;
-        let response = await this.$axios.$post(`${apiUrl}/auth/signup`, data);
+        let response = await this.$axios.$post(`api/auth/signup`, data);
 
         if (response.success) {
           this.$auth.loginWith("local", {
@@ -135,7 +135,7 @@ export default {
       };
       try {
         // debugger
-        let response = await this.$axios.$post(`${apiUrl}/auth/login`, data);
+        let response = await this.$axios.$post(`api/auth/login`, data);
         if (response.success) {
           await this.$auth
             .loginWith("local", {
